@@ -2,10 +2,28 @@
 
 ## Table des matières
 
-* [1. Node-RED](#1-node-red)
-* [2. MongoDB](#2-mongodb)
+* [1. Anciennes fonctionnalités](#1-anciennes-fonctionnalités)
+* [2. Node-RED](#2-node-red)
+* [3. MongoDB](#3-mongodb)
 
-# 1. Node-RED
+# 1. Anciennes fonctionnalités
+
+Le premier mandat que nous devons accomplir est de réusiner le code tout en maintenant les fonctionnalités actuelles en places. Voici la liste de ces fonctionnalités.
+
+* Traiter le *readline*
+* Gérer les websockets (connexion, message, close)
+* Émettre des alertes
+* Envoyer la date
+* Lire des fichiers
+* Écrire dans des fichiers
+* Créer les données pour les graphiques quotidiens et le stocker dans un fichier
+* Créer les données pour les graphiques mensuels et le stocker dans un fichier
+* Ouvrir l'accès à ces fichiers
+* Créer la database Mongo et les Collections
+* Gérer le simulateur
+* Écouter sur le port 8081
+
+# 2. Node-RED
 
 Pour la partie back-end du projet, nous avons décidé d'utiliser l'outil Node-RED. Vous retrouverez un résumé de qu'est-ce qu'est React et pourquoi nous l'avons utilisé ci-dessous.
 
@@ -23,7 +41,7 @@ Au-delà de ça, ce qui différencie Node-RED de Node.js est son concept de node
 * Facile à comprendre. L'éditeur en ligne avec des nodes nous oblige à schématiser notre logiciel qui permet de documenter le code en temps réel.
 * Facile à apprendre. Avec un support visuel et de nombreux composants disponible par défaut, il est très facile d'assembler son premier programme. De plus, il n'est même pas nécessaire de savoir programmer si les nodes existent déjà!
 
-# 2. MongoDB
+# 3. MongoDB
 
 Pour la partie database du projet, nous avons décidé d'utiliser une base de donnée NoSQL en MongoDB.
 
