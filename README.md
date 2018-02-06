@@ -53,3 +53,11 @@ MongoDB est une base de donnée qui enregistre le data dans des documents BSon q
 
 * Une structure flexible. Cela permet donc un développement plus rapide. Car contrairement à des bases de données relationnelles, il est plus facile de modifier les schémas en cours de route.
 * Des petites bases de données. En effet, puisque la base de donnée est hébergée sur le module, les données demeureront très petites. Ainsi, la performance d'une base de donnée relationnelle est négligeable dans ce contexte.
+
+
+### RUN NODE RED
+
+install node-red : https://nodered.org/docs/getting-started/installation
+install MongoDB : https://docs.mongodb.com/tutorials/install-mongodb-on-windows/
+Create a DB called MovIt, and a collection called test
+**When you add a dependency, use npm install --save {dependency}
