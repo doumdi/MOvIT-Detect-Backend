@@ -1,0 +1,154 @@
+[{
+	"id": "8f0a3724.60a698",
+	"type": "tab",
+	"label": "Flow 1",
+	"disabled": false,
+	"info": ""
+}, {
+	"id": "10f8e0d8.d3d84f",
+	"type": "mongodb",
+	"z": "",
+	"hostname": "127.0.0.1",
+	"port": "27017",
+	"db": "MovIt",
+	"name": ""
+}, {
+	"id": "e59968ef.30f4a8",
+	"type": "mongodb2",
+	"name": ""
+}, {
+	"id": "ec72ca44.f06778",
+	"type": "mongodb2",
+	"z": "",
+	"uri": "localhost:27017",
+	"name": "MovIt",
+	"options": "",
+	"parallelism": "-1"
+}, {
+	"id": "a1c8badc.696978",
+	"type": "http in",
+	"z": "8f0a3724.60a698",
+	"name": "",
+	"url": "/test",
+	"method": "post",
+	"upload": false,
+	"swaggerDoc": "",
+	"x": 80,
+	"y": 180,
+	"wires": [
+		["e8a7f5b.a290d08"]
+	]
+}, {
+	"id": "dc30eb87.5d6b38",
+	"type": "http response",
+	"z": "8f0a3724.60a698",
+	"name": "",
+	"statusCode": "",
+	"headers": {},
+	"x": 790,
+	"y": 100,
+	"wires": []
+}, {
+	"id": "e8a7f5b.a290d08",
+	"type": "function",
+	"z": "8f0a3724.60a698",
+	"name": "get body",
+	"func": "msg.payload = msg.req.body;\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 280,
+	"y": 180,
+	"wires": [
+		["6c76b1e0.002b5", "dc30eb87.5d6b38", "b18d4fa3.2a9dc"]
+	]
+}, {
+	"id": "b18d4fa3.2a9dc",
+	"type": "debug",
+	"z": "8f0a3724.60a698",
+	"name": "",
+	"active": true,
+	"tosidebar": true,
+	"console": false,
+	"tostatus": false,
+	"complete": "false",
+	"x": 800,
+	"y": 260,
+	"wires": []
+}, {
+	"id": "6c76b1e0.002b5",
+	"type": "mongodb out",
+	"z": "8f0a3724.60a698",
+	"mongodb": "10f8e0d8.d3d84f",
+	"name": "",
+	"collection": "test",
+	"payonly": true,
+	"upsert": false,
+	"multi": false,
+	"operation": "insert",
+	"x": 500,
+	"y": 300,
+	"wires": []
+}, {
+	"id": "e404ef98.27914",
+	"type": "http in",
+	"z": "8f0a3724.60a698",
+	"name": "Find by name",
+	"url": "/test",
+	"method": "get",
+	"upload": false,
+	"swaggerDoc": "",
+	"x": 90,
+	"y": 500,
+	"wires": [
+		["4620d8c.45e6828"]
+	]
+}, {
+	"id": "d2e720dc.55b29",
+	"type": "mongodb in",
+	"z": "8f0a3724.60a698",
+	"mongodb": "10f8e0d8.d3d84f",
+	"name": "",
+	"collection": "test",
+	"operation": "find",
+	"x": 500,
+	"y": 500,
+	"wires": [
+		["aadcab97.9c3288", "b039654f.931d28"]
+	]
+}, {
+	"id": "4620d8c.45e6828",
+	"type": "function",
+	"z": "8f0a3724.60a698",
+	"name": "get name query",
+	"func": "msg.payload    = \n{ 'name' : {$regex : \".*\" + msg.req.query.name + \".*\"}};\nreturn msg;",
+	"outputs": 1,
+	"noerr": 0,
+	"x": 260,
+	"y": 500,
+	"wires": [
+		["d2e720dc.55b29"]
+	]
+}, {
+	"id": "aadcab97.9c3288",
+	"type": "http response",
+	"z": "8f0a3724.60a698",
+	"name": "",
+	"statusCode": "",
+	"headers": {},
+	"x": 770,
+	"y": 460,
+	"wires": []
+}, {
+	"id": "b039654f.931d28",
+	"type": "debug",
+	"z": "8f0a3724.60a698",
+	"name": "",
+	"active": true,
+	"tosidebar": true,
+	"console": false,
+	"tostatus": false,
+	"complete": "payload",
+	"x": 810,
+	"y": 540,
+	"wires": []
+}]
