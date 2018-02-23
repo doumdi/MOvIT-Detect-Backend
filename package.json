@@ -3,6 +3,7 @@
   "description": "A Node-RED Project",
   "version": "0.0.1",
   "dependencies": {
+    "node-red": "^0.18.3",
     "node-red-contrib-mongodb2": "^0.5.6",
     "node-red-node-mongodb": "0.0.13"
   }
