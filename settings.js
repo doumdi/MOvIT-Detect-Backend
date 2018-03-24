@@ -207,6 +207,7 @@ module.exports = {
         // octalbonescript:require('octalbonescript'),
         // jfive:require("johnny-five"),
         // j5board:require("johnny-five").Board({repl:false})
+		cryptojs:require('crypto-js')
     },
 
     // The following property can be used to order the categories in the editor

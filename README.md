@@ -62,4 +62,5 @@ install MongoDB : https://docs.mongodb.com/tutorials/install-mongodb-on-windows/
 Create a DB called MovIt, and a collection called test
 **When you add a dependency, use npm install --save {dependency}
 Lancer node-red avec la commande: node-red --userDir E:/moveitplus/MOvIT-Detect-Backend 
-**En changeant le path par le votre
+**En changeant le path par celui de votre projet.
+
