@@ -69,36 +69,13 @@ To view and edit the DB, you may use an app such as Robo 3T: https://robomongo.o
 
 The database is not entirely functional as of now.
 
-You need to create a DB named MovIt. Then, create these collections:
+Run this script to initialize it as desired
 
 ```
-Config
-Current_State
-back_angle
-sitting_time
-user
+node initDatabase.js
 ```
 
-You need to add these objects to the Config Collection:
-
-```
-{
-    "_id" : ObjectId("5ab9372ae656b030f042cc43"),
-    "Value" : "Recommandation",
-    "reduceSwelling" : true,
-    "tiltFrequencyGoal" : 60,
-    "tiltLengthGoal" : 11
-}
-```
-
-```
-{
-    "_id" : ObjectId("5ab9a2f176ab3b9d7682476b"),
-    "Value" : "Configuration"
-}
-```
-
-Also, you will need some data.
+Also, you may need some data.
 
 To initialize some data, make sure your application is launched, then access it in your browser. In the tab **Simulation Basic**, press on the button next to timestamp. This will generate 18600 entries in your DB.
 
