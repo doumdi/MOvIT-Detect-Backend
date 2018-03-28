@@ -19,14 +19,7 @@ MongoClient.connect(url, function(err, client) {
   const configCollection = db.collection('Config');
 
   configCollection.remove({});
-  configCollection.insertMany([
-    {
-      "Value" : "Recommandation",
-    },
-    {
-      "Value" : "Configuration"
-    }
-  ]);
-
+  configCollection.insert({"Value" : "Recommandation"});
+  configCollection.insert({"Value" : "Configuration"});
   client.close();
 });
