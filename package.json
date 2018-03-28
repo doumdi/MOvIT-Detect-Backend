@@ -7,6 +7,7 @@
     "momentjs": "^2.0.0",
     "mqtt": "^2.15.3",
     "node-red-contrib-mongodb2": "^0.5.6",
+    "node-red-contrib-mqtt-broker": "~0.2.3",
     "node-red-node-mongodb": "0.0.13"
   }
 }

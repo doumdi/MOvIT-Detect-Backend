@@ -59,9 +59,8 @@ Then, the app should be up and running at url: http://127.0.0.1:1880. You may ac
 
 In a command shell, run this:
 
-```
-mongod --port 27017 --dbpath /usr/local/var/mongodb
-```
+sudo apt-get install mongodb 
+sudo service mongodv start
 
 To view and edit the DB, you may use an app such as Robo 3T: https://robomongo.org/download
 
