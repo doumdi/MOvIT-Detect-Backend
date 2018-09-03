@@ -27,8 +27,8 @@ MongoClient.connect(url, function(err, client) {
   const configUser = db.collection('User');
 
   configUser.remove({});
-  configUser.insert({"username" : "user", "password" : "37a8eec1ce19687d132fe29051dca629d164e2c4958ba141d5f4133a33f0688f"});
-  configUser.insert({"username" : "clinician", "password" : "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"});
+  configUser.insert({"username" : "user", "password" : "948FE603F61DC036B5C596DC09FE3CE3F3D30DC90F024C85F3C82DB2CCAB679D"}); //client
+  configUser.insert({"username" : "clinician", "password" : "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"}); //admin
   
   client.close();
 });

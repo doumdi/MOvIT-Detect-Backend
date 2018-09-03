@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 #git clone https://github.com/AustinDidierTran/MOvIT-Detect-Backend
@@ -5,5 +6,5 @@
 #sudo npm install node-red -g
 #sudo npm install
 
-
+node-red-stop
 node-red --userDir ~/Desktop/MOvIT-Detect-Backend --max-old-space-size=256
