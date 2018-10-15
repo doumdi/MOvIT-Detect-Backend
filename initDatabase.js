@@ -23,10 +23,10 @@ MongoClient.connect(url, function(err, client) {
   configCollection.insert({"Value" : "Configuration"});
   configCollection.insert({"Value" : "Goal"});
   
- const configCollection = db.collection('Current_State');
+ const Current_StateCollection = db.collection('Current_State');
 
-  configCollection.remove({});
-  configCollection.insert({"Value" : "CurrentState"});
+  Current_StateCollection.remove({});
+  Current_StateCollection.insert({"Value" : "CurrentState"});
   
   const configUser = db.collection('User');
 
