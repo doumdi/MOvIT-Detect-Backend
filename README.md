@@ -61,8 +61,9 @@ Le serveur node-red est alors connecté a l'adresse http://192.168.10.1:1880 si 
 
 # Différentes URL
 Il existe différentes URL pratiques pour déverminer le système, et s'assurer que tout fonctionne comme prévu.
+
 | URL | Utilité |
-| ------------- |-------------|
+| --- | --- |
 | /log      | Cette URL permet de voir les différentes actions effectuées par le système, il est possible de voir les tentatives d'envoi, et autres éléments importants relatifs au système
 | /debug      | Affiche via websocket les différents états de chacune des machines à états finis de MOvIT-Detect, les données brutes et traitées des capteurs y sont présentes également.|
 
