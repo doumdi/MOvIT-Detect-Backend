@@ -22,18 +22,13 @@ MongoClient.connect(url, function(err, client) {
   configCollection.insert({"Value" : "Recommandation"});
   configCollection.insert({"Value" : "Configuration"});
   configCollection.insert({"Value" : "Goal"});
-  
- const Current_StateCollection = db.collection('Current_State');
 
-  Current_StateCollection.remove({});
-  Current_StateCollection.insert({"Value" : "CurrentState"});
   
   const configUser = db.collection('User');
 
   configUser.remove({});
-  configUser.insert({"username" : "user", "password" : "948FE603F61DC036B5C596DC09FE3CE3F3D30DC90F024C85F3C82DB2CCAB679D"});
-  //client
-  configUser.insert({"username" : "clinician", "password" : "8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918"}); //admin
+  configUser.insert({"username" : "user", "password" : "bbcec2abf77fb1893ad27c963d0b3038bcbdc7c6bb1c89e985a420343aef51b8"}); //Mot de passe: movit-user
+  configUser.insert({"username" : "clinician", "password" : "fd5034b2595fadc3390e04aaf2f48b1886e71d6eeb2b81d91238a4d2b2a0d271"}); //Mot de passe: movit-admin
   
   client.close();
 });

@@ -2,7 +2,7 @@
  "nodes": {
   "node-red": {
    "name": "node-red",
-   "version": "0.18.4",
+   "version": "0.19.5",
    "local": false,
    "nodes": {
     "sentiment": {
@@ -13,7 +13,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\analysis\\72-sentiment.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/analysis/72-sentiment.js"
     },
     "inject": {
      "name": "inject",
@@ -23,7 +23,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\20-inject.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/20-inject.js"
     },
     "catch": {
      "name": "catch",
@@ -33,7 +33,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\25-catch.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/25-catch.js"
     },
     "status": {
      "name": "status",
@@ -43,7 +43,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\25-status.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/25-status.js"
     },
     "debug": {
      "name": "debug",
@@ -53,7 +53,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\58-debug.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/58-debug.js"
     },
     "link": {
      "name": "link",
@@ -64,7 +64,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\60-link.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/60-link.js"
     },
     "exec": {
      "name": "exec",
@@ -74,7 +74,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\75-exec.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/75-exec.js"
     },
     "function": {
      "name": "function",
@@ -84,7 +84,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\80-function.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/80-function.js"
     },
     "template": {
      "name": "template",
@@ -94,7 +94,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\80-template.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/80-template.js"
     },
     "delay": {
      "name": "delay",
@@ -104,7 +104,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\89-delay.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/89-delay.js"
     },
     "trigger": {
      "name": "trigger",
@@ -114,7 +114,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\89-trigger.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/89-trigger.js"
     },
     "comment": {
      "name": "comment",
@@ -124,7 +124,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\90-comment.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/90-comment.js"
     },
     "unknown": {
      "name": "unknown",
@@ -134,7 +134,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\core\\98-unknown.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/core/98-unknown.js"
     },
     "rpi-gpio": {
      "name": "rpi-gpio",
@@ -147,7 +147,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\hardware\\36-rpi-gpio.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/hardware/36-rpi-gpio.js"
     },
     "tls": {
      "name": "tls",
@@ -157,7 +157,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\05-tls.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/05-tls.js"
     },
     "mqtt": {
      "name": "mqtt",
@@ -169,7 +169,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\10-mqtt.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/10-mqtt.js"
     },
     "httpin": {
      "name": "httpin",
@@ -180,7 +180,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\21-httpin.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/21-httpin.js"
     },
     "httprequest": {
      "name": "httprequest",
@@ -190,7 +190,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\21-httprequest.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/21-httprequest.js"
     },
     "websocket": {
      "name": "websocket",
@@ -203,7 +203,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\22-websocket.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/22-websocket.js"
     },
     "watch": {
      "name": "watch",
@@ -213,7 +213,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\23-watch.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/23-watch.js"
     },
     "tcpin": {
      "name": "tcpin",
@@ -225,7 +225,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\31-tcpin.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/31-tcpin.js"
     },
     "udp": {
      "name": "udp",
@@ -236,7 +236,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\io\\32-udp.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/io/32-udp.js"
     },
     "switch": {
      "name": "switch",
@@ -246,7 +246,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\10-switch.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/logic/10-switch.js"
     },
     "change": {
      "name": "change",
@@ -256,7 +256,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\15-change.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/logic/15-change.js"
     },
     "range": {
      "name": "range",
@@ -266,7 +266,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\16-range.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/logic/16-range.js"
     },
     "split": {
      "name": "split",
@@ -277,7 +277,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\17-split.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/logic/17-split.js"
     },
     "sort": {
      "name": "sort",
@@ -287,7 +287,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\18-sort.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/logic/18-sort.js"
     },
     "batch": {
      "name": "batch",
@@ -297,7 +297,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\logic\\19-batch.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/logic/19-batch.js"
     },
     "CSV": {
      "name": "CSV",
@@ -307,7 +307,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\parsers\\70-CSV.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/parsers/70-CSV.js"
     },
     "HTML": {
      "name": "HTML",
@@ -317,7 +317,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\parsers\\70-HTML.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/parsers/70-HTML.js"
     },
     "JSON": {
      "name": "JSON",
@@ -327,7 +327,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\parsers\\70-JSON.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/parsers/70-JSON.js"
     },
     "XML": {
      "name": "XML",
@@ -337,7 +337,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\parsers\\70-XML.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/parsers/70-XML.js"
     },
     "YAML": {
      "name": "YAML",
@@ -347,7 +347,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\parsers\\70-YAML.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/parsers/70-YAML.js"
     },
     "tail": {
      "name": "tail",
@@ -357,7 +357,7 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\storage\\28-tail.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/storage/28-tail.js"
     },
     "file": {
      "name": "file",
@@ -368,14 +368,14 @@
      "enabled": true,
      "local": false,
      "module": "node-red",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\nodes\\core\\storage\\50-file.js"
+     "file": "/usr/local/lib/node_modules/node-red/nodes/core/storage/50-file.js"
     }
    }
   },
   "node-red-node-rbe": {
    "name": "node-red-node-rbe",
-   "version": "0.2.0",
-   "local": false,
+   "version": "0.2.4",
+   "local": true,
    "nodes": {
     "rbe": {
      "name": "rbe",
@@ -383,16 +383,16 @@
       "rbe"
      ],
      "enabled": true,
-     "local": false,
+     "local": true,
      "module": "node-red-node-rbe",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\node_modules\\node-red-node-rbe\\rbe.js"
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-node-rbe/rbe.js"
     }
    }
   },
   "node-red-node-email": {
    "name": "node-red-node-email",
-   "version": "0.1.24",
-   "local": false,
+   "version": "0.1.29",
+   "local": true,
    "nodes": {
     "email": {
      "name": "email",
@@ -401,16 +401,16 @@
       "e-mail in"
      ],
      "enabled": true,
-     "local": false,
+     "local": true,
      "module": "node-red-node-email",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\node_modules\\node-red-node-email\\61-email.js"
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-node-email/61-email.js"
     }
    }
   },
   "node-red-node-feedparser": {
    "name": "node-red-node-feedparser",
-   "version": "0.1.8",
-   "local": false,
+   "version": "0.1.14",
+   "local": true,
    "nodes": {
     "feedparse": {
      "name": "feedparse",
@@ -418,16 +418,16 @@
       "feedparse"
      ],
      "enabled": true,
-     "local": false,
+     "local": true,
      "module": "node-red-node-feedparser",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\node_modules\\node-red-node-feedparser\\32-feedparse.js"
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-node-feedparser/32-feedparse.js"
     }
    }
   },
   "node-red-node-twitter": {
    "name": "node-red-node-twitter",
-   "version": "0.1.12",
-   "local": false,
+   "version": "1.1.4",
+   "local": true,
    "nodes": {
     "twitter": {
      "name": "twitter",
@@ -437,9 +437,108 @@
       "twitter out"
      ],
      "enabled": true,
-     "local": false,
+     "local": true,
      "module": "node-red-node-twitter",
-     "file": "C:\\Users\\Ganbriel\\AppData\\Roaming\\npm\\node_modules\\node-red\\node_modules\\node-red-node-twitter\\27-twitter.js"
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-node-twitter/27-twitter.js"
+    }
+   }
+  },
+  "node-red-contrib-mongodb2": {
+   "name": "node-red-contrib-mongodb2",
+   "version": "0.5.6",
+   "local": true,
+   "nodes": {
+    "mongodb2": {
+     "name": "mongodb2",
+     "types": [
+      "mongodb2",
+      "mongodb2 in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-mongodb2",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-mongodb2/mongodb2/mongodb2.js"
+    }
+   }
+  },
+  "node-red-contrib-fs": {
+   "name": "node-red-contrib-fs",
+   "version": "1.0.1",
+   "local": true,
+   "nodes": {
+    "File Lister": {
+     "name": "File Lister",
+     "types": [
+      "fs-file-lister"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-fs",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-fs/fs/fs-file-lister.js"
+    }
+   }
+  },
+  "node-red-contrib-ftp-sftp": {
+   "name": "node-red-contrib-ftp-sftp",
+   "version": "1.8.8",
+   "local": true,
+   "nodes": {
+    "ftp": {
+     "name": "ftp",
+     "types": [
+      "ftp",
+      "ftp in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-ftp-sftp",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-ftp-sftp/ftp.js"
+    },
+    "sftp": {
+     "name": "sftp",
+     "types": [
+      "sftp",
+      "sftp in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-ftp-sftp",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-ftp-sftp/sftp.js"
+    }
+   }
+  },
+  "node-red-contrib-mqtt-broker": {
+   "name": "node-red-contrib-mqtt-broker",
+   "version": "0.2.4",
+   "local": true,
+   "nodes": {
+    "mosca-mqtt-broker": {
+     "name": "mosca-mqtt-broker",
+     "types": [
+      "mosca in"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-mqtt-broker",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-mqtt-broker/mosca.js"
+    }
+   }
+  },
+  "node-red-contrib-mongodb": {
+   "name": "node-red-contrib-mongodb",
+   "version": "0.3.4",
+   "local": false,
+   "nodes": {
+    "mongo": {
+     "name": "mongo",
+     "types": [
+      "mongodb-config",
+      "mongodb-node"
+     ],
+     "enabled": true,
+     "local": false,
+     "module": "node-red-contrib-mongodb",
+     "file": "/usr/local/lib/node_modules/node-red-contrib-mongodb/mongodb.js"
     }
    }
   },
@@ -458,25 +557,92 @@
      "enabled": true,
      "local": true,
      "module": "node-red-node-mongodb",
-     "file": "\\Users\\Ganbriel\\.node-red\\node_modules\\node-red-node-mongodb\\66-mongodb.js"
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-node-mongodb/66-mongodb.js"
     }
    }
   },
-  "node-red-contrib-mongodb2": {
-   "name": "node-red-contrib-mongodb2",
-   "version": "0.5.6",
+  "node-red-contrib-isonline": {
+   "name": "node-red-contrib-isonline",
+   "version": "1.1.15",
    "local": true,
    "nodes": {
-    "mongodb2": {
-     "name": "mongodb2",
+    "iIs-Online": {
+     "name": "iIs-Online",
      "types": [
-      "mongodb2",
-      "mongodb2 in"
+      "is online"
      ],
      "enabled": true,
      "local": true,
-     "module": "node-red-contrib-mongodb2",
-     "file": "\\Users\\Ganbriel\\.node-red\\node_modules\\node-red-contrib-mongodb2\\mongodb2\\mongodb2.js"
+     "module": "node-red-contrib-isonline",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-isonline/isonline/isonline.js"
+    }
+   }
+  },
+  "node-red-contrib-state-machine": {
+   "name": "node-red-contrib-state-machine",
+   "version": "1.2.0",
+   "local": true,
+   "nodes": {
+    "state-machine": {
+     "name": "state-machine",
+     "types": [
+      "state-machine"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-state-machine",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-state-machine/state-machine.js"
+    }
+   }
+  },
+  "node-red-contrib-stoptimer": {
+   "name": "node-red-contrib-stoptimer",
+   "version": "0.0.7",
+   "local": true,
+   "nodes": {
+    "stoptimer": {
+     "name": "stoptimer",
+     "types": [
+      "stoptimer"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-stoptimer",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-stoptimer/stoptimer.js"
+    }
+   }
+  },
+  "node-red-contrib-hostip": {
+   "name": "node-red-contrib-hostip",
+   "version": "0.0.3",
+   "local": true,
+   "nodes": {
+    "node-red-hostip": {
+     "name": "node-red-hostip",
+     "types": [
+      "hostip"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hostip",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-hostip/hostip/hostip.js"
+    }
+   }
+  },
+  "node-red-contrib-file-upload": {
+   "name": "node-red-contrib-file-upload",
+   "version": "0.0.5",
+   "local": true,
+   "nodes": {
+    "file-upload": {
+     "name": "file-upload",
+     "types": [
+      "file-upload"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-file-upload",
+     "file": "/home/pi/MOvIT-Detect-Backend/node_modules/node-red-contrib-file-upload/16-file-upload.js"
     }
    }
   }
@@ -488,12 +654,15 @@
     "view": {
      "view-grid-size": "20",
      "view-node-status": true,
-     "view-show-tips": true,
+     "view-show-tips": false,
      "view-snap-grid": true,
      "view-show-grid": true
     }
    },
-   "menu-menu-item-sidebar": true
+   "menu-menu-item-sidebar": true,
+   "menu-deploymenu-item-flow": true,
+   "menu-deploymenu-item-full": false,
+   "menu-deploymenu-item-node": false
   }
  }
 }

@@ -4,14 +4,23 @@
   "version": "0.0.1",
   "dependencies": {
     "crypto-js": "^3.1.9-1",
-    "moment": "^2.0.0",
-    "mongodb": "^3.1.4",
-    "mqtt": "^2.15.3",
-    "node-red": "^0.19.5",
-    "node-red-contrib-fs": "^1.0.1",
-    "node-red-contrib-ftp-sftp": "^1.8.7",
+    "install": ">=0.12.2",
+    "lodash": ">=4.17.11",
+    "moment": ">=2.14.1",
+    "mongodb": "2.2.36",
+    "mqtt": "2.18.8",
+    "node-red": "0.18.7",
+    "node-red-contrib-file-upload": "0.0.5",
+    "node-red-contrib-fs": "1.0.1",
+    "node-red-contrib-ftp-sftp": "1.8.8",
+    "node-red-contrib-hostip": "0.0.3",
     "node-red-contrib-isonline": "^1.1.15",
-    "node-red-contrib-mongodb2": "^0.5.6",
-    "node-red-node-mongodb": "0.0.13"
+    "node-red-contrib-mongodb2": "0.5.6",
+    "node-red-contrib-mqtt-broker": "0.2.4",
+    "node-red-contrib-state-machine": "^1.2.0",
+    "node-red-contrib-stoptimer": "0.0.7",
+    "node-red-node-mongodb": "0.0.13",
+    "npm": ">=6.5.0",
+    "ssh2": ">=0.8.0"
   }
 }
