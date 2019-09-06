@@ -6,30 +6,24 @@ MOvIT-Detect-Backend est comme son nom l'indique, le backend du système MOvIT+ 
   - Serveur MongoDB sur le port 27017
 
 ## Installation
-Il faut commencer par installer la version nodeJS `9.10.0` ainsi que la version NPM `5.6.0` si ce n'est pas déjà fait. Les versions plus récente de nodeJs ne permettront pas de compiler le code. (ref: https://github.com/chjj/pty.js/issues/195)
+Il faut commencer par installer la version nodeJS `9.10.0`. Les versions plus récente de nodeJs ne permettront pas de compiler le code. (ref: https://github.com/chjj/pty.js/issues/195)
 ```bash
 curl -o node-v9.10.0-linux-armv6l.tar.gz https://nodejs.org/dist/v9.10.0/node-v9.10.0-linux-armv6l.tar.gz
 ```
-  *Noter armv6**l**  et non 1*
+*Noter armv6**l**  et non 1*
 ```bash
 tar -xzf node-v9.10.0-linux-armv6l.tar.gz
 sudo cp -r node-v9.10.0-linux-armv6l/* /usr/local/
 rm -r -f node-v9.10.0-linux-armv6l/ node-v9.10.0-linux-armv6l.tar.gz
 ```
 
-Une librairie est également essentielle à la compilation qui suivra. (ref : https://github.com/mongodb-js/kerberos/issues/45)
-Il faut l'installer comme suit :
+Il faut procéder ensuite à l'installation de la version NPM `5.6.0`. Des librairies sont également essentielles à la compilation qui suivra. (ref : https://github.com/mongodb-js/kerberos/issues/45, https://github.com/JustinTulloss/zeromq.node/issues/596)
+Il faut également installer un broker MQTT, celui choisi est Mosquitto. Il faut enfin installer le tout de la façon suivante :
 ```bash
-sudo apt-get install -y libkrb5-dev
+sudo apt-get install -y npm libkrb5-dev libzmq3-dev mosquitto 
 ```
 
-
-Il faut également installer un broker MQTT, celui choisi est Mosquitto
-```bash
-sudo apt-get install -y mosquitto 
-```
-
-Par la suite il faut ajouter un nom d'utilisateurs et un mot de passe au broker MQTT, le nom d'utilisateur est `admin` et le mot de passe `movitplus`, c'est ce que nous allons configurer ici
+Par la suite il faut ajouter un nom d'utilisateur et un mot de passe au broker MQTT, le nom d'utilisateur est `admin` et le mot de passe `movitplus`, c'est ce que nous allons configurer ici
 ```bash
 sudo systemctl stop mosquitto
 sudo mosquitto_passwd -c /etc/mosquitto/passwd admin
@@ -38,7 +32,7 @@ Il faudra entrer le mot de passe lorsque demandé, ensuite on doit modifier le f
 ```bash
 sudo nano /etc/mosquitto/mosquitto.conf
 ```
-Il faut ajouter ces lignes aux fichiers mosquitto.conf
+    Il faut ajouter ces lignes aux fichiers mosquitto.conf
 ```bash
 password_file /etc/mosquitto/passwd
 allow_anonymous false
@@ -51,19 +45,18 @@ sudo systemctl start mosquitto
 On peut ensuite installer et configurer MOvIT-Detect-Backend
 
 ```bash
-sudo apt-get install -y git npm mongodb mongodb-server
+sudo apt-get install -y git mongodb mongodb-server
 sudo npm install -g node-red
 git clone https://github.com/introlab/MOvIT-Detect-Backend.git
 cd ~/MOvIT-Detect-Backend
 npm install
 ```
-Il est normal d'avoir une quantité importante de `warning` et que cette dernière ligne soit longue à exécuter
+Il est normal d'avoir une quantité importante de `warning`.
 ```bash
 node initDatabase.js
 ```
 
 Le serveur est finalement installé. Pour le démarrer, il suffit d'exécuter la commande dans le dossier racine du projet:
-
 ```bash
 cd ~/MOvIT-Detect-Backend
 node-red-pi --userDir $(pwd)
