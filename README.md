@@ -1,28 +1,40 @@
 # MOvIT-Detect-Backend
 
-MOvIT-Detect-Backend est comme son nom l'indique, le backend du système MOvIT+ destiné à fonctionner sur un Raspberry Pi Zero W. Le backend ce sépare en différentes parties soit:
+MOvIT-Detect-Backend est la partie backend du système MOvIT+ destinée à fonctionner sur un Raspberry Pi Zero W. Le backend ce sépare en différentes parties soit:
+  - Backend avec Node-Red sur le port 1880
+  - Base de données MongoDB sur le port 27017
+___
+### Table des matières :
 
-  - Serveur Node-Red-Pi sur le port 1880
-  - Serveur MongoDB sur le port 27017
+- **[Guide d'installation](#guide-dinstallation "Installation de NodeJS, MQTT, Mongo, Node-RED, GitHub, du backend et des modules")** 
+- **[Guide d'utilisation](#guide-dutilisation "Installation de NodeJS, NPM, GitHub, du frontend et des modules")**
+- **[Modification du système](#modification-du-système "Explication de la plateforme Node-RED")**
+___
 
-## Installation
-Il faut commencer par installer la version nodeJS `9.10.0` et NPM `5.6.0` qui vient avec cette version de nodeJS. Les versions plus récente de nodeJs ne permettront pas de compiler le code ([référence](https://github.com/chjj/pty.js/issues/195)). L'installation se fait avec Node Version Manager ([NVM guide et instruction supp.](https://tecadmin.net/install-nodejs-with-nvm/)):
+## Guide d'installation
+#### Installation de NodeJS
+Il faut commencer par installer NodeJS et Node Package Manager (NPM). En date du 16 octobre 2019, la version la plus à jour de NodeJS, soit **_v10.16.3_**, fonctionne parfaitement et la version de NPM la plus récente, soit **_6.9.0_**, aussi. NPM est inclus lors de l'installation de NodeJS. ~~Les versions plus récente de nodeJs ne permettront pas de compiler le code ([référence](https://github.com/chjj/pty.js/issues/195)).~~
+L'installation de NodeJS se fait facilement avec Node Version Manager, voir le [guide NVM] pour plus de détails:
 ```bash
 curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.profile #(pour que le système trouve le nouvel installation)
-nvm install 9.10.0
+source ~/.profile #Permet au système de trouver le nouvel installation
+nvm install 10.16.3 #Dernière version fonctionnelle testée
+nvm alias default 10.16.3 #Mettre cette version par défaut
 ```
-Des librairies sont également essentielles à la compilation qui suivra ([référence 1](https://github.com/mongodb-js/kerberos/issues/45), [référence 2](https://github.com/JustinTulloss/zeromq.node/issues/596)).
-Il faut également installer un broker MQTT, celui choisi est Mosquitto. Il faut enfin installer le tout de la façon suivante :
+> NodeJS est également essentiel pour faire fonctionner [la partie frontend]
+
+#### Installation de MQTT
+Il faut installer un broker MQTT, celui choisi est Mosquitto. Aussi, des librairies sont essentielles à la compilation qui suivra, soit libkrb5-dev et libzmq3-dev. Il faut enfin installer le tout de la façon suivante :
 ```bash
-sudo apt-get install -y libkrb5-dev libzmq3-dev mosquitto 
+sudo apt-get install -y libkrb5-dev libzmq3-dev mosquitto
 ```
-Par la suite il faut ajouter un nom d'utilisateur et un mot de passe au broker MQTT, le nom d'utilisateur est `admin` et le mot de passe `movitplus`, c'est ce que nous allons configurer ici
+
+Par la suite il faut ajouter un nom d'utilisateur et un mot de passe au broker MQTT, le nom d'utilisateur est `admin` et le mot de passe `movitplus`. La configuration se fait comme suit :
 ```bash
 sudo systemctl stop mosquitto
 sudo mosquitto_passwd -c /etc/mosquitto/passwd admin
 ```
-Il faudra entrer le mot de passe lorsque demandé, ensuite on doit modifier le fichier de configuration
+Il faut entrer le mot de passe lorsque demandé, puis modifier le fichier de configuration :
 ```bash
 sudo nano /etc/mosquitto/mosquitto.conf
 ```
@@ -36,41 +48,74 @@ Et finalement relancer le serveur mosquitto:
 ```bash
 sudo systemctl start mosquitto
 ```
-
-On peut ensuite installer et configurer MOvIT-Detect-Backend
-
+#### Installation de Mongo et Node-RED
+Mongo permet la gestion d'une base de données et est le logiciel choisie
 ```bash
-sudo apt-get install -y git mongodb mongodb-server
+sudo apt-get install -y mongodb mongodb-server
 npm install -g node-red
+```
+> Limitation de MongoDB : Le serveur MongoDB est limité a un maximum de 2GB de donnée, car le serveur fonctionne en 32-bit. Cette limitation est imposée par MongoDB et ne peut être corrigée.
+
+#### Installation de GitHub
+Si _git_ n'est pas installé, il faut exécuter cette commande : `sudo apt-get install -y git`
+
+#### Installation du backend
+Finalement pour installer le backend et le préparer, les commandes suivantes sont nécessaires :
+```bash
 git clone https://github.com/introlab/MOvIT-Detect-Backend.git
 cd ~/MOvIT-Detect-Backend
-npm install
+git checkout #(+la branche désirée, permet d'accéder aux versions de branches en développment)
 ```
-Il est normal d'avoir une quantité importante de `warning`.
+#### Installation des modules
 ```bash
-node initDatabase.js
+npm install #Installe tous les modules nécessaires (long sur le RaspberryPi)
+node initDatabase.js #Initialisation de la base de données
 ```
+Un redémarrage peut s'avérer nécessaire pour que le service Mongo (_mongod.service_) soit correctement démarré. La commande `systemctl status mongodb.service` donnera l'état de ce service.
+___
 
-Le serveur est finalement installé. Pour le démarrer, il suffit d'exécuter la commande dans le dossier racine du projet:
+
+
+## Guide d'utilisation
+#### Démarrage
+Une fois installé, pour démarrer le backend, il suffit d'exécuter cette commande dans le dossier racine du projet :
 ```bash
-cd ~/MOvIT-Detect-Backend
-node-red-pi --userDir $(pwd)
+cd ~/MOvIT-Detect-Backend #Navigue jusqu'au dossier racine du projet
+node-red-pi --userDir $(pwd) #où $(pwd) retourne l'emplacement actuel
 ```
-Il est possible de changer la commande `$(pwd)` par l'emplacement du fichier MovIt.json
+Le démarrage avec des commandes similaires est géré avec un service (basé sur _systemd_) pour les systèmes préconfigurés. Le fichier qui constitue le service se trouve sous `/etc/systemd/system/movit_backend.service`. Voir la documentation sur le [démarrage du RaspberryPi].
 
-Le serveur node-red est alors connecté a l'adresse http://192.168.10.1:1880 si l'on utilise le point d'accès créer par le Raspberry Pi Zero W, autrement il est accessible via l'adresse DHCP assignée par le routeur.
+L'interface web de Node-RED est alors accessible en se connectant sur le point d'accès généré par le RaspberryPi (voir les [instructions de configuration réseau]) à l'addresse [movit.plus:1880]. Il est aussi possible d'y accèder à l'aide de l'addresse [192.168.10.1:1880]. Aussi, pour le développement local, l'addresse pour accèder à l'interface à même la machine est simplement : [localhost:1880]
 
-## Différentes URLs
-Il existe différentes URL pratiques pour déverminer le système, et s'assurer que tout fonctionne comme prévu.
+#### Différents URLs
+Il existe différents URLs pratiques pour déverminer le système, et s'assurer que tout fonctionne comme prévu :
 
 | URL | Utilité |
 | --- | --- |
-| /log      | Cette URL permet de voir les différentes actions effectuées par le système, il est possible de voir les tentatives d'envoi, et autres éléments importants relatifs au système
-| /debug      | Affiche via websocket les différents états de chacune des machines à états finis de MOvIT-Detect, les données brutes et traitées des capteurs y sont présentes également.|
+| /log      | Affiche les différentes actions effectuées par le système, notamment les tentatives d'envoi, et plusieurs autres éléments importants relatifs au système
+| /debug      | Affiche via websocket les différents états de chacune des machines à états finis de MOvIT-Detect, ainsi que les données brutes et traitées des capteurs|
+___
+
+
 
 ## Modification du système
-Pour modifier le système, il suffit d'aller a l'adresse http://192.168.10.1:1880 si l'on utilise le point d'accès créer par le Raspberry Pi Zero W, le code du backend devrais alors s'afficher sous forme de bloc. Chacun de ces blocs représente une partie du code. Les onglets sont séparés en plusieurs parties distinctes, ce qui facilite la compréhension.
+Pour modifier le système, l'interface de Node-RED permet que le code du backend soit affiché sous forme de bloc et de liens. Chacun de ces blocs représente une partie du code. Les onglets sont séparés en plusieurs parties distinctes, ce qui facilite la compréhension. Certains blocs peuvent contenir du code JavaScript, permettant ainsi des fonctions plus puissantes et complexes.
+___
 
 
-## Limitation MongoDB
-Le serveur MongoDB est limité a un maximum de 2GB de donnée, car le serveur fonctionne en 32-bit, cette limitation est imposée par MongoDB et ne peut être corrigée.
+
+
+
+ [guide NVM]:https://tecadmin.net/install-nodejs-with-nvm/ "Guide de NVM et instruction supplémentaires"
+
+ [la partie frontend]:https://github.com/introlab/MOvIT-Detect-Frontend "MOvIT-Detect-Frontend"
+
+ [démarrage du RaspberryPi]:https://github.com/introlab/MOvITPlus/blob/master/docs/FR/InstallationLogiciel/DemarragePi.md#service-backend "Service de démarrage du backend"
+
+ [instructions de configuration réseau]:https://github.com/introlab/MOvITPlus/blob/master/docs/FR/InstallationLogiciel/ConfigurationReseau.md#access-point "Configuration du wi-fi, du point d'accès et du nom de domaine"
+
+[movit.plus:1880]:http://movit.plus:1880 "Addresse de l'interface en utilisant le point d'accès"
+
+[192.168.10.1:1880]:http://192.168.10.1:1880 "Autre option d'addresse de l'interface en utilisant le point d'accès"
+
+[localhost:1880]:http://localhost:1880 "Addresse de l'interface en utilisant le navigateur de la machine sur laquelle le serveur s'exécute"
