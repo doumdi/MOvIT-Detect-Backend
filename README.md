@@ -6,13 +6,23 @@ MOvIT-Detect-Backend est la partie backend du système MOvIT+ destinée à fonct
 ___
 ### Table des matières :
 
-- **[Guide d'installation](#guide-dinstallation "Installation de NodeJS, MQTT, Mongo, Node-RED, GitHub, du backend et des modules")** 
-- **[Guide d'utilisation](#guide-dutilisation "Installation de NodeJS, NPM, GitHub, du frontend et des modules")**
-- **[Modification du système](#modification-du-système "Explication de la plateforme Node-RED")**
+- [MOvIT-Detect-Backend](#movit-detect-backend)
+    - [Table des matières :](#table-des-mati%c3%a8res)
+- [1. Guide d'installation](#1-guide-dinstallation)
+    - [1.1. Installation de NodeJS](#11-installation-de-nodejs)
+    - [1.2. Installation de MQTT](#12-installation-de-mqtt)
+    - [1.3. Installation de Mongo et Node-RED](#13-installation-de-mongo-et-node-red)
+    - [1.4. Installation de GitHub](#14-installation-de-github)
+    - [1.5. Installation du backend](#15-installation-du-backend)
+    - [1.6. Installation des modules](#16-installation-des-modules)
+- [2. Guide d'utilisation](#2-guide-dutilisation)
+    - [2.1. Démarrage](#21-d%c3%a9marrage)
+    - [2.2. Différents URLs](#22-diff%c3%a9rents-urls)
+- [3. Modification du système](#3-modification-du-syst%c3%a8me)
 ___
 
-## Guide d'installation
-#### Installation de NodeJS
+# 1. Guide d'installation
+### 1.1. Installation de NodeJS
 Il faut commencer par installer NodeJS et Node Package Manager (NPM). En date du 16 octobre 2019, la version la plus à jour de NodeJS, soit **_v10.16.3_**, fonctionne parfaitement et la version de NPM la plus récente, soit **_6.9.0_**, aussi. NPM est inclus lors de l'installation de NodeJS. ~~Les versions plus récente de nodeJs ne permettront pas de compiler le code ([référence](https://github.com/chjj/pty.js/issues/195)).~~
 L'installation de NodeJS se fait facilement avec Node Version Manager, voir le [guide NVM] pour plus de détails:
 ```bash
@@ -23,11 +33,14 @@ nvm alias default 10.16.3 #Mettre cette version par défaut
 ```
 > NodeJS est également essentiel pour faire fonctionner [la partie frontend]
 
-#### Installation de MQTT
+### 1.2. Installation de MQTT
 Il faut installer un broker MQTT, celui choisi est Mosquitto. Aussi, des librairies sont essentielles à la compilation qui suivra, soit libkrb5-dev et libzmq3-dev. Il faut enfin installer le tout de la façon suivante :
 ```bash
-sudo apt-get install -y libkrb5-dev libzmq3-dev mosquitto
+sudo apt-get install -y libkrb5-dev libzmq3-dev mosquitto-clients=1.6.4-0mosquitto1~stretch1
 ```
+> Mosquitto semble mal fonctionner avec sa dernière version sur le RaspberryPi Zerp W, c'est pourquoi il est essentiel de spécifier une version dans la ligne de commande pour l'installation ci-haut.
+
+> Commande probablement pas nécessaire : sudo apt-get install libmosquitto1=1.6.4-0mosquitto1~stretch1
 
 Par la suite il faut ajouter un nom d'utilisateur et un mot de passe au broker MQTT, le nom d'utilisateur est `admin` et le mot de passe `movitplus`. La configuration se fait comme suit :
 ```bash
@@ -48,7 +61,7 @@ Et finalement relancer le serveur mosquitto:
 ```bash
 sudo systemctl start mosquitto
 ```
-#### Installation de Mongo et Node-RED
+### 1.3. Installation de Mongo et Node-RED
 Mongo permet la gestion d'une base de données et est le logiciel choisie
 ```bash
 sudo apt-get install -y mongodb mongodb-server
@@ -56,17 +69,17 @@ npm install -g node-red
 ```
 > Limitation de MongoDB : Le serveur MongoDB est limité a un maximum de 2GB de donnée, car le serveur fonctionne en 32-bit. Cette limitation est imposée par MongoDB et ne peut être corrigée.
 
-#### Installation de GitHub
+### 1.4. Installation de GitHub
 Si _git_ n'est pas installé, il faut exécuter cette commande : `sudo apt-get install -y git`
 
-#### Installation du backend
+### 1.5. Installation du backend
 Finalement pour installer le backend et le préparer, les commandes suivantes sont nécessaires :
 ```bash
 git clone https://github.com/introlab/MOvIT-Detect-Backend.git
 cd ~/MOvIT-Detect-Backend
 git checkout #(+la branche désirée, permet d'accéder aux versions de branches en développment)
 ```
-#### Installation des modules
+### 1.6. Installation des modules
 ```bash
 npm install #Installe tous les modules nécessaires (long sur le RaspberryPi)
 node initDatabase.js #Initialisation de la base de données
@@ -76,8 +89,8 @@ ___
 
 
 
-## Guide d'utilisation
-#### Démarrage
+# 2. Guide d'utilisation
+### 2.1. Démarrage
 Une fois installé, pour démarrer le backend, il suffit d'exécuter cette commande dans le dossier racine du projet :
 ```bash
 cd ~/MOvIT-Detect-Backend #Navigue jusqu'au dossier racine du projet
@@ -87,7 +100,7 @@ Le démarrage avec des commandes similaires est géré avec un service (basé su
 
 L'interface web de Node-RED est alors accessible en se connectant sur le point d'accès généré par le RaspberryPi (voir les [instructions de configuration réseau]) à l'addresse [movit.plus:1880]. Il est aussi possible d'y accèder à l'aide de l'addresse [192.168.10.1:1880]. Aussi, pour le développement local, l'addresse pour accèder à l'interface à même la machine est simplement : [localhost:1880]
 
-#### Différents URLs
+### 2.2. Différents URLs
 Il existe différents URLs pratiques pour déverminer le système, et s'assurer que tout fonctionne comme prévu :
 
 | URL | Utilité |
@@ -98,7 +111,7 @@ ___
 
 
 
-## Modification du système
+# 3. Modification du système
 Pour modifier le système, l'interface de Node-RED permet que le code du backend soit affiché sous forme de bloc et de liens. Chacun de ces blocs représente une partie du code. Les onglets sont séparés en plusieurs parties distinctes, ce qui facilite la compréhension. Certains blocs peuvent contenir du code JavaScript, permettant ainsi des fonctions plus puissantes et complexes.
 ___
 
