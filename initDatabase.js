@@ -22,6 +22,7 @@ MongoClient.connect(url, function(err, client) {
   configCollection.insert({"Value" : "Recommandation"});
   configCollection.insert({"Value" : "Configuration"});
   configCollection.insert({"Value" : "Goal"});
+  configCollection.insert({"Value" : "Alarm"});
 
   
   const configUser = db.collection('User');
