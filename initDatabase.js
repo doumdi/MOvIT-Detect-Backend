@@ -9,12 +9,13 @@ const dbName = 'MovIt';
 // Use connect method to connect to the server
 MongoClient.connect(url, function(err, client) {
   if (err) {
-    console.error(`There was an error in the connect: ${err.message}`);
+    console.error(`There was an error while trying to connect to the mongo database: ${err.message}`);
   }
 
-  console.log("Connected successfully to server");
+  console.log("Connected successfully to the mongo server - Database initialised");
 
   const db = client.db(dbName);
+
 
   const configCollection = db.collection('Config');
 
@@ -23,8 +24,17 @@ MongoClient.connect(url, function(err, client) {
   configCollection.insert({"Value" : "Configuration"});
   configCollection.insert({"Value" : "Goal"});
   configCollection.insert({"Value" : "Alarm"});
+  configCollection.insert({"Value" : "DataAgreement"});
+  configCollection.update({Value : "DataAgreement"},{$set : {"dataAgreement" : false}}) // Assume disagreement of user
+  // Success of this last line to be verified
 
-  
+  const configFileReport = db.collection('FileReport');
+
+  configFileReport.remove({});
+  configFileReport.insert({"Value" : ""});
+
+
+
   const configUser = db.collection('User');
 
   configUser.remove({});
