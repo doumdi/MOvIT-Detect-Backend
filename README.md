@@ -36,7 +36,7 @@ nvm alias default 10.16.3 #Mettre cette version par défaut
 ### 1.2. Installation de MQTT
 Il faut installer un broker MQTT, celui choisi est Mosquitto. Aussi, des librairies sont essentielles à la compilation qui suivra, soit libkrb5-dev et libzmq3-dev. Il faut enfin installer le tout de la façon suivante :
 ```bash
-sudo apt-get install -y libkrb5-dev libzmq3-dev mosquitto-clients=1.6.4-0mosquitto1~stretch1
+sudo apt-get install -y libkrb5-dev libzmq3-dev mosquitto-clients=1.6.4-0mosquitto1~buster1
 ```
 > Mosquitto semble mal fonctionner avec sa dernière version sur le RaspberryPi Zerp W, c'est pourquoi il est essentiel de spécifier une version dans la ligne de commande pour l'installation ci-haut.
 
