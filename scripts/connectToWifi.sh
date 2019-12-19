@@ -2,7 +2,7 @@
 
 confName="/etc/wpa_supplicant/wpa_supplicant.conf"
 
-sudo ifdown --force wlan0
+ifdown --force wlan0
 
 numLine=$(awk '/network/{ print NR; exit }' $confName)
 
@@ -17,7 +17,7 @@ fi
 echo "Connecting to "$ssid" with password "$pwd
 
 if [ ! -z $numLine ]; then
-	head -n -$numLine $confName > temp.txt ; sudo mv temp.txt $confName
+	head -n -$numLine $confName > temp.txt ; mv temp.txt $confName
 fi
 
 echo "network={" >> $confName
@@ -26,4 +26,4 @@ echo "    psk=\"$pwd\"" >> $confName
 echo "    id_str=\"AP1\"" >> $confName
 echo "}" >> $confName
 
-sudo ifup wlan0
+ifup wlan0
