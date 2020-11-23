@@ -16,18 +16,57 @@ MongoClient.connect(url, function(err, client) {
 
   const db = client.db(dbName);
 
+  
+  //Flush all AngleData
+  const angleDataCollection = db.collection('AngleData')
+  angleDataCollection.remove({})
+
+  //Flush all AngleState
+  const angleStateCollection = db.collection('AngleState')
+  angleStateCollection.remove({})
+
+  //Flush all TravelData
+  const travelDataCollection = db.collection('TravelData')
+  travelDataCollection.remove({})
+
+  //Flush all TravelState
+  const travelStateCollection = db.collection('TravelState')
+  travelStateCollection.remove({})
+
+  //Flush all SeatingData
+  const seatingDataCollection = db.collection('SeatingData')
+  seatingDataCollection.remove({})
+
+  //Flush all SeatingState
+  const seatingStateCollection = db.collection('SeatingState')
+  seatingStateCollection.remove({})
+
+
+  //Flush all NotivationState
+  const notificationStateCollection = db.collection('NotificationState')
+  notificationStateCollection.remove({})
+
 
   const configCollection = db.collection('Config');
 
   configCollection.remove({});
   configCollection.insert({"Value" : "Recommandation"});
   configCollection.insert({"Value" : "Configuration"});
+  configCollection.update({Value: "Configuration"}, {$set:{"maxAngle": 50, "minAngle": 0}});
+	
+	
+	
   configCollection.insert({"Value" : "Goal"});
-  configCollection.insert({"Value" : "Alarm"});
-  configCollection.insert({"Value" : "DataAgreement"});
-  configCollection.update({Value : "DataAgreement"},{$set : {"dataAgreement" : false}}) // Assume disagreement of user
-  // Success of this last line to be verified
+  configCollection.update({Value: "Goal"}, {$set: {"tiltAngle": 32, "tiltFrequency": 300, "tiltLength": 61}});
 
+	
+  configCollection.insert({"Value" : "Alarm"});
+  configCollection.update({Value: "Alarm"}, {$set: {"enabled": false, "isLedBlinkingEnabled": false, "isVibrationEnabled": false, "snoozeTime": 60}});
+
+  configCollection.insert({"Value" : "DataAgreement"});
+  configCollection.update({Value : "DataAgreement"},{$set: {"dataAgreement" : false}}); // Assume disagreement of user
+  
+  // Success of this last line to be verified
   const configFileReport = db.collection('FileReport');
 
   configFileReport.remove({});
