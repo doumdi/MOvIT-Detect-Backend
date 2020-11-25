@@ -66,6 +66,10 @@ MongoClient.connect(url, function(err, client) {
   configCollection.insert({"Value" : "DataAgreement"});
   configCollection.update({Value : "DataAgreement"},{$set: {"dataAgreement" : false}}); // Assume disagreement of user
   
+
+  configCollection.insert({"Value" : "AngleOffset"});
+  configCollection.update({Value : "AngleOffset"}, {$set: {"mIMU": 0, "fIMU": 0}});	
+
   // Success of this last line to be verified
   const configFileReport = db.collection('FileReport');
 
