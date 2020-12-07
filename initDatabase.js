@@ -61,7 +61,7 @@ MongoClient.connect(url, function(err, client) {
 
 	
   configCollection.insert({"Value" : "Alarm"});
-  configCollection.update({Value: "Alarm"}, {$set: {"enabled": false, "isLedBlinkingEnabled": false, "isVibrationEnabled": false, "snoozeTime": 60}});
+  configCollection.update({Value: "Alarm"}, {$set: {"enabled": true, "isLedBlinkingEnabled": true, "isVibrationEnabled": false, "snoozeTime": 60}});
 
   configCollection.insert({"Value" : "DataAgreement"});
   configCollection.update({Value : "DataAgreement"},{$set: {"dataAgreement" : false}}); // Assume disagreement of user
