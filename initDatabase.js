@@ -42,7 +42,7 @@ MongoClient.connect(url, function(err, client) {
   seatingStateCollection.remove({})
 
 
-  //Flush all NotivationState
+  //Flush all NotificationState
   const notificationStateCollection = db.collection('NotificationState')
   notificationStateCollection.remove({})
 
