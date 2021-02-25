@@ -36,9 +36,6 @@ Il faut installer un broker MQTT, celui choisi est Mosquitto. Aussi, des librair
 sudo apt-get update
 sudo apt-get install -y vim i2c-tools build-essential cmake mosquitto git libmosquittopp-dev mosquitto-clients mongodb mongodb-server libkrb5-dev libzmq3-dev autoconf
 ```
-> Mosquitto semble mal fonctionner avec sa dernière version sur le RaspberryPi Zerp W, c'est pourquoi il est essentiel de spécifier une version dans la ligne de commande pour l'installation ci-haut.
-
-> Commande probablement pas nécessaire : sudo apt-get install libmosquitto1=1.6.4-0mosquitto1~stretch1
 
 Par la suite il faut ajouter un nom d'utilisateur et un mot de passe au broker MQTT, le nom d'utilisateur est `admin` et le mot de passe `movitplus`. La configuration se fait comme suit :
 ```bash
