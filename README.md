@@ -23,13 +23,10 @@ ___
 
 # 1. Guide d'installation
 ### 1.1. Installation de NodeJS
-Il faut commencer par installer NodeJS et Node Package Manager (NPM). En date du 16 octobre 2019, la version la plus à jour de NodeJS, soit **_v10.16.3_**, fonctionne parfaitement et la version de NPM la plus récente, soit **_6.9.0_**, aussi. NPM est inclus lors de l'installation de NodeJS. ~~Les versions plus récente de nodeJs ne permettront pas de compiler le code ([référence](https://github.com/chjj/pty.js/issues/195)).~~
-L'installation de NodeJS se fait facilement avec Node Version Manager, voir le [guide NVM] pour plus de détails:
+Il faut commencer par installer NodeJS et Node Package Manager (NPM).L'installation de NodeJS se fait facilement avec les commandes suivantes :
 ```bash
-curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-source ~/.profile #Permet au système de trouver le nouvel installation
-nvm install 10.16.3 #Dernière version fonctionnelle testée
-nvm alias default 10.16.3 #Mettre cette version par défaut
+sudo wget -qO- https://deb.nodesource.com/setup_10.x | sudo bash -
+sudo apt-get update && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y nodejs yarn
 ```
 > NodeJS est également essentiel pour faire fonctionner [la partie frontend]
 
