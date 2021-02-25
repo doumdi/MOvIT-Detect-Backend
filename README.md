@@ -46,12 +46,15 @@ Il faut entrer le mot de passe lorsque demandé, puis modifier le fichier de con
 ```bash
 sudo nano /etc/mosquitto/mosquitto.conf
 ```
-Il faut ajouter ces lignes aux fichiers mosquitto.conf
+Il faut ajouter ces lignes à la fin du fichier mosquitto.conf
 ```bash
 #Password options
 password_file /etc/mosquitto/passwd
 allow_anonymous false
 ```
+> CTRL-O pour sauver le fichier [ENTER]
+> CTRL-X pour sortir
+
 Et finalement relancer le serveur mosquitto:
 ```bash
 sudo systemctl start mosquitto
