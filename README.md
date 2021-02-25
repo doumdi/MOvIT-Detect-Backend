@@ -63,7 +63,6 @@ sudo systemctl start mosquitto
 Mongo permet la gestion d'une base de données et est le logiciel choisie
 ```bash
 sudo apt-get install -y mongodb mongodb-server
-npm install -g node-red
 ```
 > Limitation de MongoDB : Le serveur MongoDB est limité a un maximum de 2GB de donnée, car le serveur fonctionne en 32-bit. Cette limitation est imposée par MongoDB et ne peut être corrigée.
 
