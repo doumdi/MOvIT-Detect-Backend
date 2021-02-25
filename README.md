@@ -67,11 +67,15 @@ sudo apt-get install -y mongodb mongodb-server
 > Limitation de MongoDB : Le serveur MongoDB est limité a un maximum de 2GB de donnée, car le serveur fonctionne en 32-bit. Cette limitation est imposée par MongoDB et ne peut être corrigée.
 
 ### 1.4. Installation du backend
+
+Nous assumons ici que tout le projet a été téléchargé avec:
+```bash
+git clone https://github.com/introlab/MOvITPlus.git --recurse-submodules
+```
+
 Finalement pour installer le backend et le préparer, les commandes suivantes sont nécessaires :
 ```bash
-git clone https://github.com/introlab/MOvIT-Detect-Backend.git
-cd ~/MOvIT-Detect-Backend
-git checkout #(+la branche désirée, permet d'accéder aux versions de branches en développment)
+cd ~/MOvITPlus/MOvIT-Detect-Backend
 ```
 ### 1.5. Installation des modules
 ```bash
