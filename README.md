@@ -89,11 +89,12 @@ ___
 
 # 2. Guide d'utilisation
 ### 2.1. Démarrage
+
 Une fois installé, pour démarrer le backend, il suffit d'exécuter cette commande dans le dossier racine du projet :
 ```bash
-cd ~/MOvIT-Detect-Backend #Navigue jusqu'au dossier racine du projet
-node-red-pi --userDir $(pwd) #où $(pwd) retourne l'emplacement actuel
+/home/pi/MOvITPlus/MOvIT-Detect-Backend/node_modules/node-red/bin/node-red-pi -u /home/pi/MOvITPlus/MOvIT-Detect-Backend --max-old-space-size=256
 ```
+
 Le démarrage avec des commandes similaires est géré avec un service (basé sur _systemd_) pour les systèmes préconfigurés. Le fichier qui constitue le service se trouve sous `/etc/systemd/system/movit_backend.service`. Voir la documentation sur le [démarrage du RaspberryPi].
 
 L'interface web de Node-RED est alors accessible en se connectant sur le point d'accès généré par le RaspberryPi (voir les [instructions de configuration réseau]) à l'addresse [movit.plus:1880]. Il est aussi possible d'y accèder à l'aide de l'addresse [192.168.10.1:1880]. Aussi, pour le développement local, l'addresse pour accèder à l'interface à même la machine est simplement : [localhost:1880]
