@@ -1,11 +1,12 @@
 #!/bin/bash
 
+# Configuration file
 confName="/etc/wpa_supplicant/wpa_supplicant.conf"
 
-ifdown --force wlan0
+# Force wlan1 (USB dongle) down
+ifdown --force wlan1
 
-numLine=$(awk '/network/{ print NR; exit }' $confName)
-
+#Verify script parameters
 ssid=$1
 pwd=$2
 
@@ -14,16 +15,21 @@ if [ -z "$ssid" ] || [ -z "$pwd" ]; then
 	exit 1
 fi
 
+# Write new configuration
 echo "Connecting to "$ssid" with password "$pwd
 
-if [ ! -z $numLine ]; then
-	head -n -$numLine $confName > temp.txt ; mv temp.txt $confName
-fi
+# This will clear the file and write this line
+echo "ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev" > $confName
 
+# The other lines are appended... 
+echo "update_config=1" >> $confName
+echo "country=CA" >> $confName
+echo " " >> $confName
 echo "network={" >> $confName
 echo "    ssid=\"$ssid\"" >> $confName
 echo "    psk=\"$pwd\"" >> $confName
 echo "    id_str=\"AP1\"" >> $confName
 echo "}" >> $confName
 
-ifup wlan0
+# Restart interface
+ifup wlan1
