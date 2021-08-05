@@ -10,6 +10,6 @@
     "node-red-contrib-hostip": "~0.0.3",
     "node-red-contrib-isonline": "~1.1.15",
     "node-red-contrib-mongodb2": "~0.5.6",
-    "node-red-node-mongodb": "~0.0.14"
+    "node-red-node-mongodb": "^0.2.5"
   }
 }
