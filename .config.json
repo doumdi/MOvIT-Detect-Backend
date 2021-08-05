@@ -425,7 +425,7 @@
   },
   "node-red-node-mongodb": {
    "name": "node-red-node-mongodb",
-   "version": "0.0.14",
+   "version": "0.2.5",
    "local": true,
    "nodes": {
     "mongo": {
